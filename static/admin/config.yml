@@ -131,3 +131,7 @@ collections:
       - {label: "Page Order", name: "order", widget: "number"}
       - {label: "Team Image", name: "profilePicture", widget: "image", required: false,}
       - {label: "Body", name: "body", widget: "markdown"}
+    prePublish:
+    - command: >
+        {{- slug "name" (slugify "prepend" "") }}
+        echo "slug has been set to {{fields.slug}}"
