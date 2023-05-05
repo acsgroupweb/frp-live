@@ -129,8 +129,5 @@ collections:
       - {label: "Page Order", name: "order", widget: "number"}
       - {label: "Team Image", name: "profilePicture", widget: "image", required: false,}
       - {label: "Body", name: "body", widget: "markdown"}
-    prePublish:
-    - command: >
-        SLUG=$(echo "{{fields.name}}" | tr '[:upper:]' '[:lower:]' | sed -e 's/[^a-zA-Z0-9]/-/g')
-        sed -i "s/slug:.*/slug: \/team\/${SLUG}/" {{fileAbsPath}}
+
 
