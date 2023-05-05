@@ -124,7 +124,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "team"}
-      - {label: "Slug", name: "slug", widget: "string"}
+      # - {label: "Slug", name: "slug", widget: "string"}
       - {label: "Team Member Name", name: "name", widget: "string"}
       - {label: "Job Title", name: "jobTitle", widget: "string"}
       - {label: "Credentials", name: "credentials", widget: "string"}
@@ -133,5 +133,5 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
     prePublish:
     - command: >
-               SLUG=$(echo "{{fields.name}}" | tr '[:upper:]' '[:lower:]' | sed -e 's/[^a-zA-Z0-9]/-/g')
-               sed -i "s/slug:.*/slug: \/projects\/${SLUG}/" {{fileAbsPath}}
+        SLUG=$(echo "{{fields.name}}" | tr '[:upper:]' '[:lower:]' | sed -e 's/[^a-zA-Z0-9]/-/g')
+        sed -i "s/slug:.*/slug: \/team\/${SLUG}/" {{fileAbsPath}}
