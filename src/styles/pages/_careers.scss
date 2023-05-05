@@ -1,0 +1,149 @@
+@use 'utils/typography' as t;
+@use 'utils/mixins' as m;
+@use 'utils/colors' as c;
+@use 'utils/screens' as s;
+
+.careers-page-container {
+  width: 95%;
+  margin: 20px auto;
+
+  .half-color::after {
+    @include m.HalfColor("e", c.$color__frp_black);
+    top: -0.32px;
+  }
+
+  .box-container {
+    position: initial;
+    transform: none;
+    margin-top: 15px;
+  }
+
+  .box-wrapper {
+    position: static;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 auto;
+    position: static;
+    z-index: 1;
+  }
+
+  h1:not(.card__title) {
+    font-family: t.$font__Spartan;
+    text-align: left;
+  }
+
+  h1:last-of-type {
+    margin-top: 1.6em;
+  }
+
+  ul {
+    margin: 0 0 20px 0;
+    li {
+      list-style: disc;
+      margin-left: 20px;
+    }
+  }
+
+  .single-page-content {
+    margin-top: 20px;
+  }
+}
+
+/* Using BEM */
+
+.careers__jobs {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-content: center;
+}
+
+.card {
+  //margin: 20px 10px;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  &__title {
+    font-size: 1.1em;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  &__blurb {
+    font-family: t.$font__Lato;
+    @include m.font-size(0.9, 500);
+    line-height: 1.3;
+    margin: 1rem auto auto;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 c.$color__frp_grey_faded;
+    }
+  }
+}
+
+.card--job {
+  height: 100%;
+}
+
+.red-outline-button--card {
+  text-align: center;
+  width: 50%;
+  margin: 10px auto;
+}
+
+.contact-form--job-upload {
+  margin: 2em;
+
+  form {
+    position: relative;
+
+    &.hide {
+      opacity: 0.3;
+    }
+  }
+}
+
+.loading {
+  display: none;
+}
+
+.loading.show {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.single-page-content--job-upload {
+  margin-bottom: 2em;
+}
+
+@media screen and (min-width: s.$query__medium) {
+  .careers-page-container {
+    width: 90%;
+    max-width: 1000px;
+
+    .box-container {
+      top: auto; // to unset slider.scss code.
+      height: auto;
+      width: auto;
+    }
+  }
+
+  .contact-form--job-upload {
+    margin: 0;
+  }
+}

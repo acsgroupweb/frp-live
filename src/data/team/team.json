@@ -1,0 +1,15 @@
+[
+    {
+        "id":1,
+        "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "image": "../../images/team/scott.jpg",
+        "person": "Scott E. Rouse, Vice President"
+    },
+    {
+        "id":2,
+        "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "image": "../../images/team/horton.jpg",
+        "person": "William Horton, President"
+    }
+]
+  

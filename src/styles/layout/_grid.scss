@@ -1,0 +1,64 @@
+@use 'utils/typography' as t;
+@use 'utils/screens' as s;
+
+.site-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "headerArea"
+    "mainArea"
+    "footerArea";
+
+  header,
+  main,
+  footer {
+    grid-column: 1 / -1;
+  }
+  height: 100%;
+  grid-template-rows: 1fr auto auto;
+  margin-top: 39px; //for header offset
+  position: relative;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  //overflow-x: hidden;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+#___gatsby,
+#gatsby-focus-wrapper {
+  height: 100%;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+h1,
+h2 {
+  font-family: t.$font__Spartan;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+h2 {
+  font-size: 1.3em;
+  margin: 10px 0;
+}
+
+@media screen and (min-width: s.$query__medium) {
+  body {
+    margin-top: 76px;
+  }
+}

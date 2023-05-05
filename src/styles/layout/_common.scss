@@ -1,0 +1,271 @@
+@use 'utils/typography' as t;
+@use 'utils/mixins' as m;
+@use 'utils/colors' as c;
+@use 'utils/screens' as s;
+
+.red-fill-button {
+  @include m.FilledButton();
+}
+
+.red-outline-button {
+  @include m.MoreButton;
+}
+
+.red-outline-button.disabled {
+  opacity: 0.5;
+  border: 2px c.$color__frp_red_faded solid;
+  cursor: not-allowed;
+}
+
+.red-category-button {
+  text-align: center;
+  background-color: c.$color__frp_red;
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  span {
+    text-decoration: none;
+    color: c.$color__frp_white;
+    padding: 10px 5px;
+    display: block;
+    cursor: pointer;
+    font-family: t.$font__Lato;
+    @include m.font-size(0.7, 700);
+    outline: none;
+  }
+}
+
+.red-category-button {
+  opacity: 0.7;
+}
+
+.red-category-button:hover,
+.red-category-button.selected {
+  opacity: 1;
+}
+
+.red-category-button.selected,
+.red-category-button:hover {
+  border: 2px solid c.$color__frp_white_faded;
+}
+
+.secondary-text {
+  @include m.font-size(0.9, 700);
+  font-family: t.$font__Lato;
+  line-height: 1.5;
+  color: c.$color__frp_black;
+}
+
+.feedback-wrapper {
+  position: relative;
+}
+.error-message {
+  @include m.font-size(0.7, 500);
+  font-family: t.$font__Lato;
+  color: c.$color__frp_red;
+
+  text-align: center;
+  width: 100%;
+}
+
+.status-message {
+  @include m.font-size(0.7, 500);
+  font-family: t.$font__Lato;
+  color: c.$color__frp_gray;
+  text-align: left;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.status-message--file {
+  padding: 0.4rem;
+  border: 1px solid c.$color__frp_gray;
+}
+
+@keyframes hideAfter5 {
+  from {
+    position: static;
+  }
+  to {
+    position: absolute;
+  }
+}
+
+.section-title {
+  @include m.HomeHeaderCenterAlign;
+  margin: 20px 0;
+  span {
+    @include m.HomeHeader;
+    text-align: center;
+  }
+
+  span.top-text {
+    margin-bottom: 5px;
+  }
+
+  span.bottom-text {
+    margin-top: 7px;
+  }
+
+  .half-color {
+    position: relative;
+    display: inline-block;
+    color: c.$color__frp_red;
+  }
+  .half-color::after {
+    //@include m.HalfColor("m", c.$color__frp_black);
+    top: -0.32px;
+  }
+
+  .horizontal-line {
+    @include m.HorizontalLine(75);
+  }
+}
+
+.section-sub-title {
+  @include m.SectionSubTitle();
+}
+
+.section-sub-title.center {
+  @include m.SectionSubTitle(center, c.$color__frp_red);
+}
+
+.project-title {
+  font-family: t.$font__Spartan;
+  @include m.font-size(0.7, 700);
+  text-transform: uppercase;
+  display: block;
+  text-align: center;
+  margin: 10px auto 0;
+  line-height: 1.2;
+}
+
+.project-subTitle {
+  font-family: t.$font__Spartan;
+  @include m.font-size(0.6, 700);
+  text-transform: uppercase;
+  display: block;
+  text-align: center;
+  margin: 5px auto 0;
+  line-height: 1.2;
+}
+
+.single-page-title {
+  font-family: t.$font__Spartan;
+  @include m.font-size(1, 700);
+  text-transform: uppercase;
+  display: block;
+  text-align: center;
+  margin: 10px auto;
+  line-height: 1.2;
+}
+
+.single-page-subTitle {
+  font-family: t.$font__Spartan;
+  @include m.font-size(0.9, 700);
+  text-transform: uppercase;
+  display: block;
+  text-align: center;
+  margin: 10px auto;
+  line-height: 1.2;
+}
+
+.single-page-content {
+  p,
+  ul {
+    @include m.Paragraph(0.9);
+  }
+
+  ul {
+    margin-top: -20px;
+  }
+
+  li {
+    list-style: disc;
+    margin-left: 20px;
+  }
+}
+
+@media screen and (min-width: s.$query__small) {
+  .project-title {
+    @include m.font-size(0.9, 700);
+  }
+  .project-subTitle {
+    @include m.font-size(0.8, 700);
+  }
+}
+
+@media screen and (min-width: s.$query__medium) {
+  .red-outline-button {
+    @include m.MoreButton(0.8);
+  }
+
+  .secondary-text {
+    @include m.font-size(0.9, 700);
+    line-height: 2;
+  }
+
+  .section-title {
+    margin: 25px 0;
+
+    span:not(.constant) {
+      @include m.HomeHeader(1.8, 500);
+    }
+
+    span.bottom-text {
+      margin-top: 10px;
+    }
+  }
+
+  .section-sub-title {
+    @include m.SectionSubTitle(flex-start, c.$color__frp_black, 1, 600);
+  }
+
+  .section-sub-title.center {
+    @include m.SectionSubTitle(center, c.$color__frp_red, 1, 600);
+  }
+
+  .single-page-title {
+    @include m.font-size(1.1, 700);
+  }
+
+  .single-page-subTitle {
+    @include m.font-size(1, 700);
+  }
+
+  .single-page-content {
+    p,
+    ul {
+      @include m.Paragraph(1);
+    }
+  }
+}
+
+@media screen and (min-width: s.$query__very-large) {
+  .red-outline-button {
+    @include m.MoreButton(1, 20);
+  }
+
+  .secondary-text {
+    @include m.font-size(1.3, 700);
+    line-height: 2;
+  }
+
+  .section-title {
+    margin: 30px 0;
+    span {
+      @include m.HomeHeader(2.3, 500);
+    }
+  }
+
+  .section-sub-title {
+    @include m.SectionSubTitle(flex-start, c.$color__frp_black, 1.3, 600);
+  }
+
+  .section-sub-title.center {
+    @include m.SectionSubTitle(center, c.$color__frp_red, 1.3, 600);
+  }
+}

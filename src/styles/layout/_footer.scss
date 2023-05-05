@@ -1,0 +1,236 @@
+@use 'utils/typography' as t;
+@use 'utils/mixins' as m;
+@use 'utils/colors' as c;
+@use 'utils/screens' as s;
+
+.footer-container {
+  background-color: c.$color__frp_services_black;
+
+  .error-message {
+    text-align: left;
+  }
+}
+
+.footer-copyright {
+  background-image: radial-gradient(
+    circle,
+    c.$color__frp_white,
+    c.$color__frp_gray-team 100%
+  );
+
+  padding: 10px 0;
+  text-align: center;
+  font-family: t.$font__Spartan;
+  @include m.font-size(0.6, 500);
+  color: c.$color__frp_services_black;
+  line-height: 1.5;
+
+  a {
+    text-decoration: none;
+    color: c.$color__frp_services_black;
+  }
+}
+
+.copyrights-wrapper {
+  width: 95%;
+  margin: 0 auto;
+}
+.footer-main {
+  //background-color: c.$color__frp_services_black;
+  display: grid;
+  grid-template-areas:
+    "address address address"
+    "quick-links vline news";
+  justify-items: center;
+  padding: 20px 0;
+  grid-template-columns: 45% 10% 45%;
+  max-width: 2500px;
+
+  div,
+  a {
+    font-family: t.$font__Spartan;
+    @include m.font-size(0.6, 500);
+    color: c.$color__frp_white;
+  }
+
+  .title {
+    text-transform: uppercase;
+    font-weight: 700;
+    @include m.font-size(0.65, 700);
+    margin: 0 0 10px 0;
+  }
+}
+
+.address-section {
+  grid-area: address;
+  text-align: center;
+  width: 300px;
+  margin: 0 0 20px 0;
+
+  div {
+    margin: 0 0 10px 0;
+  }
+}
+
+.newsletter-box {
+  width: 100px;
+}
+
+.quick-links-section {
+  grid-area: quick-links;
+  display: flex;
+  flex-direction: column;
+  justify-self: flex-end;
+  align-items: flex-end;
+
+  a {
+    padding: 10px 0;
+    text-decoration: none;
+  }
+}
+
+.news-section {
+  grid-area: news;
+  justify-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  div {
+    //margin: 0 0 10px 0;
+    width: 100%;
+  }
+}
+
+.newsletter-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.vertical-line {
+  grid-area: vline;
+  height: 100%;
+  width: 2px;
+  background-color: c.$color__frp_white;
+}
+
+.horizontal-line {
+  height: 2px;
+  width: 100%;
+  background-color: c.$color__frp_white;
+  margin: 0 0 10px 0;
+}
+
+.address {
+  line-height: 1.2;
+}
+
+.go-button {
+  margin: 0 0px 0px 5px;
+  border: c.$color__frp_red 1px solid;
+  background-color: transparent;
+  color: c.$color__frp_white;
+  display: inline-block;
+  padding: 5px;
+  outline: none;
+}
+
+.newsletter-box {
+  border-radius: 0;
+  padding: 3px;
+  font-family: t.$font__Spartan;
+}
+
+.contact-button {
+  @include m.FilledButton();
+  text-align: center;
+}
+
+.social-section a {
+  font-size: 2em;
+  padding: 10px;
+}
+
+.quick-links-section .content,
+.news-section .content {
+  display: flex;
+  flex-direction: column;
+}
+
+.news-section .content {
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+// @media screen and (min-width: s.$query__medium) {
+//   .footer-main {
+//     display: grid;
+//     grid-template-areas: "address quick-links news";
+//     justify-items: center;
+//     justify-content: space-between;
+//     padding: 30px 0;
+//     grid-template-columns: 1fr 1fr 1fr;
+//     margin: 0 auto;
+//     width: 90%;
+
+//     .title {
+//       margin: 0 0 20px 0;
+//     }
+//   }
+
+//   .address {
+//     line-height: 1.5;
+//   }
+
+//   .vertical-line {
+//     display: none;
+//   }
+
+//   .quick-links-section {
+//     justify-self: center;
+//     align-items: flex-start;
+//   }
+
+//   .quick-links-section .content a:first-child {
+//     padding-top: 0;
+//   }
+
+//   .address-section {
+//     text-align: left;
+//     justify-self: flex-start;
+//   }
+
+//   .news-section {
+//     justify-self: flex-end;
+//     width: 200px;
+//   }
+
+//   .newsletter-box {
+//     width: 150px;
+//   }
+
+//   .contact-button {
+//     width: 150px;
+//   }
+
+//   .news-section .content {
+//     justify-content: space-between;
+//   }
+// }
+
+// @media screen and (min-width: s.$query__very-large) {
+//   .footer-main {
+//     div,
+//     a {
+//       @include m.font-size(0.7, 500);
+//     }
+
+//     .title {
+//       @include m.font-size(0.75, 700);
+//     }
+
+//     .social-section a {
+//       font-size: 2em;
+//       padding: 10px;
+//     }
+//   }
+// }

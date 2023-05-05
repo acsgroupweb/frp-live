@@ -1,0 +1,44 @@
+@use 'utils/typography' as t;
+@use 'utils/mixins' as m;
+@use 'utils/colors' as c;
+@use 'utils/screens' as s;
+
+.kml-map {
+  height: 400px;
+}
+.legend {
+  display: none;
+  background: #fff;
+  padding: 5px;
+  margin: 0 10px 0 0;
+  border: 2px solid #000;
+  width: 150px;
+
+  h3 {
+    margin-bottom: 5px;
+    text-align: center;
+  }
+
+  div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+.map-section {
+  .section-title {
+    .half-color::after {
+      @include m.HalfColor("x", c.$color__frp_black);
+    }
+  }
+}
+
+@media screen and (min-width: s.$query__medium) {
+  .legend {
+    display: block;
+  }
+
+  .kml-map {
+    height: 500px;
+  }
+}

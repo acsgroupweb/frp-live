@@ -1,0 +1,132 @@
+@use 'utils/colors' as c;
+@use 'utils/typography' as t;
+@use 'utils/mixins' as m;
+@use 'utils/screens' as s;
+
+.statistics-container {
+  background-color: c.$color__frp_red;
+}
+
+.statistics-wrapper {
+  width: 95%;
+  margin: 0 auto;
+  padding: 20px 0px 10px;
+  display: grid;
+  grid-template-columns: 40% 30% 30%;
+  grid-template-rows: 70% 30%;
+  align-items: center;
+  color: c.$color__frp_white;
+  font-family: t.$font__Spartan;
+  @include m.font-size(0.5, 500);
+  text-transform: uppercase;
+
+  div {
+    padding: 10px 10px;
+  }
+
+  div:nth-last-child(-n + 3) {
+    padding-bottom: 0px;
+    line-height: 1.5;
+  }
+}
+
+.statistics-number {
+  @include m.font-size(1.5, 500);
+}
+.statistics-projects {
+  background-color: c.$color__frp_gray;
+}
+.statistics-clients {
+  background-image: radial-gradient(
+    circle,
+    c.$color__frp_white,
+    c.$color__frp_statistics_gray1,
+    c.$color__frp_statistics_gray2
+  );
+
+  color: c.$color__frp_black;
+}
+
+.statistics-experience {
+  background-color: c.$color__frp_white;
+  color: c.$color__frp_black;
+}
+
+.statistics-blurb-wrapper {
+  width: 95%;
+  margin: 0 auto;
+  padding: 10px 0px 20px;
+  text-align: center;
+
+  span {
+    @include m.font-size(0.5, 500);
+    line-height: 2;
+    font-family: t.$font__Spartan;
+    color: c.$color__frp_white;
+    text-transform: uppercase;
+  }
+}
+
+@media screen and (min-width: s.$query__small) {
+  .statistics-wrapper {
+    @include m.font-size(0.6, 500);
+    width: 80%;
+    margin: 0px auto;
+  }
+
+  .statistics-number {
+    @include m.font-size(1.6, 500);
+  }
+
+  .statistics-blurb-wrapper {
+    span {
+      @include m.font-size(0.6, 500);
+    }
+  }
+}
+
+@media screen and (min-width: s.$query__medium) {
+  .statistics-wrapper {
+    width: 700px;
+    @include m.font-size(0.7, 500);
+  }
+
+  .statistics-number {
+    @include m.font-size(1.8, 500);
+  }
+
+  .statistics-blurb-wrapper {
+    width: 720px;
+    span {
+      @include m.font-size(0.7, 500);
+    }
+  }
+}
+
+@media screen and (min-width: s.$query__very-large) {
+  .statistics-wrapper {
+    @include m.font-size(0.8, 500);
+    width: 800px;
+
+    div {
+      padding: 20px 20px;
+    }
+
+    div:nth-last-child(-n + 3) {
+      padding-bottom: 0px;
+      padding-top: 10px;
+      line-height: 1.5;
+    }
+  }
+
+  .statistics-number {
+    @include m.font-size(2, 500);
+  }
+
+  .statistics-blurb-wrapper {
+    width: 820px;
+    span {
+      @include m.font-size(0.8, 500);
+    }
+  }
+}

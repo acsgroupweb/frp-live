@@ -1,0 +1,158 @@
+@use 'utils/typography' as t;
+@use 'utils/mixins' as m;
+@use 'utils/colors' as c;
+@use 'utils/screens' as s;
+
+.team-page-container {
+  width: 95%;
+  margin: 20px auto;
+
+  .team-title {
+    margin-bottom: 10px;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.team-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  grid-template-rows: auto;
+}
+
+.team-member-info {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.team-member-name {
+  font-family: t.$font__Spartan;
+  @include m.font-size(0.8, 600);
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.team-member-jobTitle {
+  font-family: t.$font__Lato;
+  @include m.font-size(0.8, 500);
+  text-transform: uppercase;
+}
+
+.team-member-image,
+.team-single-image {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+// Team Single PAge
+
+.team-single-wrapper {
+  width: 95%;
+  margin: 20px auto;
+
+  .team-title {
+    margin-bottom: 10px;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  h1 {
+    font-family: t.$font__Spartan;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  h2 {
+    font-family: t.$font__Spartan;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .navigation {
+    display: flex;
+    justify-content: flex-end;
+    margin: 5px 0;
+  }
+
+  .back-button {
+    @include m.FilledButton();
+    text-align: center;
+    width: 75px;
+  }
+
+  .back-button.mobile {
+    display: block;
+  }
+
+  .back-button.desktop {
+    display: none;
+  }
+}
+
+.team-single-info {
+  font-family: t.$font__Lato;
+  @include m.font-size(1, 500);
+  line-height: 1.5;
+}
+
+@media screen and (min-width: s.$query__medium) {
+  .team-page-container {
+    width: 90%;
+    max-width: 2500px;
+    .team-title {
+      margin-bottom: 20px;
+    }
+  }
+
+  .team-member-image {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  // Team Single
+  .team-single-wrapper {
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    position: relative;
+
+    .team-single-image {
+      width: 500px;
+      margin: 0 auto;
+      align-self: center;
+    }
+
+    .navigation {
+      margin: 0;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+    }
+
+    .back-button.mobile {
+      display: none;
+    }
+
+    .back-button.desktop {
+      display: block;
+    }
+
+    .single-page-subTitle {
+      @include m.font-size(0.7, 700);
+    }
+  }
+
+  .team-gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

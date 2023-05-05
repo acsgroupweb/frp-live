@@ -1,0 +1,292 @@
+@use 'utils/colors' as c;
+@use 'utils/typography' as t;
+@use 'utils/mixins' as m;
+@use 'utils/screens' as s;
+
+.services-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+
+  background-image: radial-gradient(
+    circle,
+    c.$color__frp_white,
+    c.$color__frp_gray-team 100%
+  );
+
+  padding: 30px 10px;
+}
+
+// .services-title {
+//   @include m.HomeHeaderCenterAlign;
+//   margin: 20px 0;
+//   span {
+//     @include m.HomeHeader;
+//     text-align: center;
+//   }
+
+//   .half-color {
+//     position: relative;
+//     display: inline-block;
+//     color: c.$color__frp_red;
+//   }
+//   .half-color::after {
+//     @include m.HalfColor("v", c.$color__frp_black);
+//     top: -0.32px;
+//   }
+
+//   .horizontal-line {
+//     @include m.HorizontalLine(120);
+//   }
+// }
+
+.services-wrapper {
+  width: 300px;
+  height: 150px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.services-section .section-title {
+  .half-color {
+    &::after {
+      @include m.HalfColor("v", c.$color__frp_black);
+    }
+  }
+}
+
+.square {
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  outline: none;
+  margin: 0;
+  position: absolute;
+}
+
+.services-text {
+  font-family: t.$font__Spartan;
+  @include m.font-size(0.55, 500);
+  position: absolute;
+  text-transform: uppercase;
+}
+
+.square1 {
+  background-color: c.$color__frp_red;
+  top: 20px;
+  left: 150px;
+  transform: translate(-50%, 0);
+  z-index: 2;
+}
+
+.square2 {
+  border: 2px #000000 solid;
+  top: 35px;
+  left: 140px;
+  transform: translate(-50%, 0);
+  //transform: translate(-40%, -40%);
+  z-index: 3;
+}
+
+.square3 {
+  background-color: c.$color__frp_services_gray;
+  top: 55px;
+  left: 150px;
+  transform: translate(-50%, 0);
+  z-index: 2;
+}
+
+.square4 {
+  background-color: c.$color__frp_services_black;
+  top: 70px;
+  left: 140px;
+  transform: translate(-50%, 0);
+  z-index: 1;
+}
+
+.square5 {
+  border: 2px c.$color__frp_services_black solid;
+  top: 77px;
+  left: 173px;
+  transform: translate(-50%, 0);
+  z-index: 1;
+}
+
+.rectangle {
+  height: 30px;
+  width: 100px;
+  border: 2px c.$color__frp_red solid;
+  top: 94px;
+  left: 150px;
+  transform: translate(-50%, 0);
+  z-index: 2;
+  position: absolute;
+}
+
+.text1 {
+  left: 150px;
+  transform: translate(-50%, 0);
+}
+
+.text2 {
+  left: 0px;
+  top: 35px;
+}
+
+.text3 {
+  left: 0px;
+  top: 90px;
+}
+
+.text4 {
+  left: 150px;
+  transform: translate(-50%, 0);
+  top: 133px;
+}
+@media screen and (min-width: s.$query__medium-small) {
+  .services-wrapper {
+    width: 400px;
+  }
+  .services-text {
+    @include m.font-size(0.6, 500);
+  }
+
+  .text1 {
+    left: 200px;
+  }
+  .square1 {
+    left: 200px;
+  }
+  .square2 {
+    left: 190px;
+  }
+  .square3 {
+    left: 200px;
+  }
+  .square4 {
+    left: 190px;
+  }
+  .square5 {
+    left: 223px;
+  }
+  .rectangle {
+    left: 200px;
+  }
+  .text2 {
+    left: 40px;
+  }
+  .text3 {
+    left: 40px;
+  }
+  .text4 {
+    left: 200px;
+  }
+}
+
+@media screen and (min-width: s.$query__small) {
+  .services-wrapper {
+    width: 500px;
+    height: 160px;
+  }
+  .services-text {
+    @include m.font-size(0.7, 500);
+  }
+
+  .square {
+    height: 35px;
+    width: 35px;
+  }
+
+  .text1 {
+    left: 250px;
+  }
+  .square1 {
+    left: 250px;
+  }
+  .square2 {
+    left: 240px;
+    top: 45px;
+  }
+  .square3 {
+    left: 250px;
+    top: 65px;
+  }
+  .square4 {
+    left: 240px;
+    top: 90px;
+  }
+  .square5 {
+    left: 275px;
+    top: 93px;
+  }
+  .rectangle {
+    left: 250px;
+    width: 120px;
+    top: 115px;
+  }
+  .text2 {
+    left: 70px;
+  }
+  .text3 {
+    left: 70px;
+  }
+  .text4 {
+    left: 250px;
+    top: 158px;
+  }
+}
+
+@media screen and (min-width: s.$query__very-large) {
+  .services-wrapper {
+    width: 500px;
+    height: 200px;
+  }
+  .services-text {
+    @include m.font-size(1, 500);
+  }
+
+  .square {
+    height: 40px;
+    width: 40px;
+  }
+
+  .text1 {
+    left: 250px;
+  }
+  .square1 {
+    left: 250px;
+    top: 30px;
+  }
+  .square2 {
+    left: 240px;
+    top: 55px;
+  }
+  .square3 {
+    left: 250px;
+    top: 80px;
+  }
+  .square4 {
+    left: 240px;
+    top: 100px;
+  }
+  .square5 {
+    left: 285px;
+    top: 106px;
+  }
+  .rectangle {
+    left: 250px;
+    width: 140px;
+    top: 132px;
+  }
+  .text2 {
+    left: 10px;
+  }
+  .text3 {
+    left: 10px;
+  }
+  .text4 {
+    left: 250px;
+    top: 178px;
+  }
+}

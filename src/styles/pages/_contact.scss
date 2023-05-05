@@ -1,0 +1,89 @@
+@use 'utils/typography' as t;
+@use 'utils/mixins' as m;
+@use 'utils/colors' as c;
+@use 'utils/screens' as s;
+
+.contact-container {
+  width: 95%;
+  margin: 20px auto;
+  max-width: 600px;
+
+  .half-color::after {
+    @include m.HalfColor("a", c.$color__frp_black);
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 5px;
+    @include m.font-size(1, 500);
+    font-family: t.$font__Lato;
+    margin: 10px 0;
+  }
+
+  input[type="file"] {
+    padding: 0;
+    opacity: 0;
+    width: 30%;
+    margin-top: 0;
+  }
+
+  textarea {
+    height: 200px;
+  }
+
+  .red-fill-button.submit {
+    width: 150px;
+    margin: 10px auto;
+    display: block;
+  }
+
+  .red-fill-button--file {
+    width: 60%;
+    margin: 0px auto 10px;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .file-upload-text {
+    width: 100%;
+    padding: 5px;
+    @include m.font-size(1, 500);
+    font-family: t.$font__Lato;
+    margin: 0 0 10px;
+    border: 1px solid c.$color__frp_gray;
+    color: c.$color__frp_gray;
+  }
+
+  .recaptha {
+    display: flex;
+    justify-content: center;
+  }
+
+  .contact-map {
+    height: 400px;
+    margin: 20px 0;
+    border: 1px c.$color__frp_red solid;
+  }
+
+  .contact-info-window {
+    padding: 10px;
+  }
+}
+
+@media screen and (min-width: s.$query__medium) {
+  .contact-container {
+    max-width: 1200px;
+    margin: 0px auto;
+  }
+
+  .contact-content-wrapper {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contact-map-wrapper {
+    margin: 0px;
+  }
+}

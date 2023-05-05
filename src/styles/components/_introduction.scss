@@ -1,0 +1,26 @@
+@use 'utils/colors' as c;
+@use 'utils/typography' as t;
+@use 'utils/mixins' as m;
+@use 'utils/screens' as s;
+
+.mobile-introductory-text {
+  padding: 10px 30px;
+  font-family: t.$font__Lato;
+  @include m.font-size(0.7, 700);
+  display: block;
+  color: c.$color__frp_white;
+  z-index: 1;
+  line-height: 1.5;
+  text-align: center;
+  width: 100%;
+  background-color: c.$color__frp_gray;
+  p {
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: s.$query__medium-small) {
+  .mobile-introductory-text {
+    display: none;
+  }
+}

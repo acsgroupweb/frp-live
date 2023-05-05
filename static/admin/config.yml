@@ -1,0 +1,113 @@
+backend:
+  name: git-gateway
+  # name: test-repo
+  branch: main # Branch to update (optional; defaults to master)
+# This line should *not* be indented
+publish_mode: editorial_workflow
+# This line should *not* be indented
+media_folder: "static/images/" # Media files will be stored in the repo under images/uploads
+public_folder: "/static/images" # Media files will be stored in the repo under images/uploads
+collections:
+  - name: "news" # Used in routes, e.g., /admin/collections/blog
+    label: "News" # Used in the UI
+    folder: "static/content/news" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - { label: "Layout", name: "layout", widget: "hidden", default: "news" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "newsItemImage", widget: "image" }
+      - {
+          label: "Category",
+          name: "category",
+          widget: "string",
+          default: "General",
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "projects" # Used in routes, e.g., /admin/collections/blog
+    label: "Projects" # Used in the UI
+    folder: "static/content/projects" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {
+          label: "Layout",
+          name: "layout",
+          widget: "hidden",
+          default: "project",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: "Sub Title",
+          name: "subTitle",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Location", name: "location", widget: "string" }
+      - {
+          label: "Category",
+          name: "category",
+          widget: "select",
+          options:
+            [
+              "All",
+              "Civic",
+              "Cultural",
+              "Cultural/Performing Arts",
+              "Healthcare",
+              "Higher Education/Classroom",
+              "Higher Education/Living",
+              "Higher Education/Meeting",
+              "Hospitality",
+              "Housing-Retail",
+              "Industrial",
+              "Laboratories",
+              "Office",
+              "Parking",
+              "Recreation",
+              "Repair",
+              "Schools (K-12)",
+              "Specialty",
+              "Sports",
+              "Warehouse",
+              "Water",
+            ],
+        }
+      - {
+          label: "Category Sort Number",
+          name: "categorySortNumber",
+          widget: "number",
+          value_type: "int",
+        }
+      - {
+          label: "Featured Desktop Project",
+          name: "featuredDesktopProject",
+          widget: "boolean",
+          default: false,
+        }
+      - {
+          label: "Featured Mobile Project",
+          name: "featuredMobileProject",
+          widget: "boolean",
+          default: false,
+        }
+      - { label: "Featured Image", name: "featuredImage", widget: "image" }
+      - {
+          label: "Slider Images",
+          name: "sliderImages",
+          widget: "list",
+          summary: "{{fields.image}} - {{fields.credit}} ",
+          fields:
+            [
+              { label: "Slider Image", name: "image", widget: "image" },
+              {
+                label: "Credit",
+                name: "credit",
+                widget: "string",
+                required: false,
+                default: "",
+              },
+            ],
+        }
+      - { label: "Body", name: "body", widget: "markdown" }

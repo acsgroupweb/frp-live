@@ -1,0 +1,169 @@
+@use 'utils/typography' as t;
+@use 'utils/mixins' as m;
+@use 'utils/colors' as c;
+@use 'utils/screens' as s;
+
+.about-page-container {
+  width: 95%;
+  margin: 20px auto;
+
+  .about-timeline-wrapper {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .main-text {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .timeline-bar {
+    position: absolute;
+    height: 100%;
+    width: 6px;
+    background-color: c.$color__frp_red;
+    left: 50%;
+    z-index: -1;
+  }
+
+  .about-title {
+    margin-bottom: 10px;
+    @include m.HomeHeaderCenterAlign;
+    span {
+      @include m.HomeHeader;
+      text-align: center;
+    }
+  }
+
+  .about-timeline-wrapper .about-title span {
+    @include m.HomeHeader(1);
+  }
+
+  .half-color {
+    position: relative;
+    display: inline-block;
+    color: c.$color__frp_red;
+  }
+  .half-color::after {
+    @include m.HalfColor("o", c.$color__frp_black);
+    top: -0.32px;
+  }
+
+  .horizontal-line {
+    @include m.HorizontalLine(75);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  p {
+    @include m.Paragraph();
+    text-align: center;
+  }
+
+  .item {
+    margin: 0 0 60px 0;
+    padding: 10px 20px;
+    .header {
+      color: c.$color__frp_red;
+      @include m.font-size(2, 500);
+      border: c.$color__frp_red 2px solid;
+      padding: 5px;
+      font-family: t.$font__Lato;
+      text-align: center;
+      width: 200px;
+      margin: 0 auto 10px;
+      background-color: c.$color__frp_white;
+    }
+
+    .image {
+      margin: 0 0 10px;
+    }
+
+    .blurb {
+      background-color: c.$color__frp_white;
+    }
+
+    .project-modal p {
+      font-style: normal;
+      text-transform: none;
+      @include m.Paragraph(0.8);
+    }
+
+    p {
+      @include m.Paragraph(1);
+      line-height: 1.2;
+    }
+
+    &:hover {
+      //box-shadow: 10px 10px c.$color__frp_grey_faded;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+  }
+
+  .project-content-image .box.item {
+    margin: 10px 10px 10px 0;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: s.$query__medium) {
+  .about-page-container {
+    width: 90%;
+
+    .about-title span.bottom-text {
+      margin-top: 10px;
+      @include m.HomeHeader(1.8);
+    }
+
+    .main-text {
+      max-width: 800px;
+      margin-bottom: 30px;
+    }
+
+    .about-timeline-wrapper {
+      max-width: 1000px;
+    }
+
+    .about-timeline {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .item {
+      padding: 20px 40px;
+      position: relative;
+
+      &:last-child .header.right {
+        transform: translate(50%, 80%);
+      }
+    }
+
+    .header.left {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      transform: translate(-50%, 100%);
+    }
+
+    .header.right {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      transform: translate(50%, 100%);
+    }
+  }
+
+  .timeline-horizontal-bar {
+    position: absolute;
+    height: 6px;
+    width: 100%;
+    background-color: c.$color__frp_red;
+    z-index: -1;
+    transform: translate(-40px, 30px);
+  }
+}
