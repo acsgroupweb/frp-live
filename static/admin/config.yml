@@ -157,8 +157,7 @@ collections:
   - name: "about"
     editor:
       preview: false
-    label: "About Sections"
-    label_singular: "Team Member"
+    label: "About Page"
     description: >
       About Section Content
     folder: "static/content/about"
@@ -186,11 +185,43 @@ collections:
         }
       - {label: "Body", name: "body", widget: "markdown"}
 
+  - label: "Careers Page"
+    name: "careers"
+    files:
+      - file: "static/content/careers/careers.md"
+        label: "Careers Page"
+        name: "careerspage"
+        fields:
+          - {
+              label: "Layout",
+              name: "layout",
+              widget: "hidden",
+              default: "careers",
+            }
+          - {
+              label: "Slider Images",
+              name: "sliderImages",
+              widget: "list",
+              summary: "{{fields.image}} - {{fields.credit}} ",
+              fields:
+                [
+                  { label: "Slider Image", name: "image", widget: "image" },
+                  {
+                    label: "Credit",
+                    name: "credit",
+                    widget: "string",
+                    required: false,
+                    default: "",
+                  },
+                ],
+            }
+          - { label: "Body", name: "body", widget: "markdown" }
+
   - name: "jobs"
     editor:
       preview: false
-    label: "Jobs"
-    label_singular: "Job"
+    label: "Open Positions"
+    label_singular: "Position"
     description: >
       Available Jobs
     folder: "static/content/careers/jobs"
@@ -233,6 +264,9 @@ collections:
                 ],
             }
           - { label: "Body", name: "body", widget: "markdown" }
+          
+  
+
 
 
 
