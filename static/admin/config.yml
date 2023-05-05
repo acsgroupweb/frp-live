@@ -121,6 +121,7 @@ collections:
       Add Team Members Here
     folder: "static/content/team"
     create: true
+    slug: "{{fields.slug}}"
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "team"}
       - {label: "Team Member Name", name: "name", widget: "string"}
@@ -129,5 +130,5 @@ collections:
       - {label: "Page Order", name: "order", widget: "number"}
       - {label: "Team Image", name: "profilePicture", widget: "image", required: false,}
       - {label: "Body", name: "body", widget: "markdown"}
-    beforeCreate: "slugifyTeamName"
+
 

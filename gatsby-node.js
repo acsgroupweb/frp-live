@@ -11,24 +11,23 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({ node, getNode, basePath: `` })
-
-    createNodeField({
-      node,
-      name: `slug`,
-      value: slug,
-    })
-
-    if (node.frontmatter.layout === `team`) {
-      const teamSlug = slugify(node.frontmatter.name, {
+    // If the node is a team member
+    if (node.frontmatter.layout === 'team') {
+      const slug = slugify(node.frontmatter.name, {
         lower: true,
         remove: /[*+~.()'"!:@]/g,
       })
-
       createNodeField({
         node,
         name: `slug`,
-        value: `/team/${teamSlug}`,
+        value: `/team/${slug}`,
+      })
+    } else {
+      const slug = createFilePath({ node, getNode, basePath: `` })
+      createNodeField({
+        node,
+        name: `slug`,
+        value: slug,
       })
     }
   }
