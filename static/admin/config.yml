@@ -130,5 +130,10 @@ collections:
       - {label: "Page Order", name: "order", widget: "number"}
       - {label: "Team Image", name: "profilePicture", widget: "image", required: false,}
       - {label: "Body", name: "body", widget: "markdown"}
-
+      - {
+        label: "Slug",
+        name: "slug",
+        widget: "hidden",
+        default: "{{fields.name | slugify}}",
+      }
 
