@@ -133,5 +133,5 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
     prePublish:
     - command: >
-        {{- slug "name" (slugify "prepend" "") }}
-        echo "slug has been set to {{fields.slug}}"
+               SLUG=$(echo "{{fields.name}}" | tr '[:upper:]' '[:lower:]' | sed -e 's/[^a-zA-Z0-9]/-/g')
+               sed -i "s/slug:.*/slug: \/projects\/${SLUG}/" {{fileAbsPath}}
