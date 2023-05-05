@@ -187,13 +187,13 @@ export default class Footer extends React.Component {
         <div className="footer-copyright">
           <div className="copyrights-wrapper">
             &#169; 2021 Fink Roberts & Petrie, Inc. All Rights Reserved.{" "}
-            <a
+            {/* <a
               href="https://www.crosspixel.in"
               target="_blank"
               rel="noreferrer"
             >
               Designed by Crosspixel
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
