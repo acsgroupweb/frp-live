@@ -118,7 +118,7 @@ collections:
     label: "Team Members"
     label_singular: "Team Member"
     description: >
-      Add Team Members here
+      Add Team Members Here
     folder: "static/content/team"
     create: true
     slug: "{{slug}}"
