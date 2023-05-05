@@ -1,6 +1,10 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
+const _ = require(`lodash`)
+const slugify = require(`slugify`)
+
+
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
 
@@ -10,6 +14,23 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       node,
       name: `slug`,
       value: slug,
+    })
+  }
+}
+
+
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions
+
+  if (node.internal.type === `MarkdownRemark`) {
+    const slug = slugify(node.frontmatter.name, {
+      lower: true,
+      remove: /[*+~.()'"!:@]/g,
+    })
+    createNodeField({
+      node,
+      name: `slug`,
+      value: `/team/${slug}`,
     })
   }
 }
@@ -121,6 +142,9 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+
+
+  
 
   // Extract category from query
   const categories = result.data.newsCategories.group
