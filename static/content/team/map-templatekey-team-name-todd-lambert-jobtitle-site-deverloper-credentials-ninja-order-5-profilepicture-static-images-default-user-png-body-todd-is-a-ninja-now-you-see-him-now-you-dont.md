@@ -1,5 +1,5 @@
 ---
-templateKey: team
+layout: team
 name: Todd Lambert
 jobTitle: Site Deverloper
 credentials: Ninja
