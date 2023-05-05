@@ -11,16 +11,16 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
+    // If the node is a team member
     if (node.frontmatter.layout === 'team') {
-      const filename = node.frontmatter.filename
-      const slug = `/team/${slugify(filename, {
+      const slug = slugify(node.frontmatter.name, {
         lower: true,
         remove: /[*+~.()'"!:@]/g,
-      })}`
+      })
       createNodeField({
         node,
         name: `slug`,
-        value: slug,
+        value: `/team/${slug}`,
       })
     } else {
       const slug = createFilePath({ node, getNode, basePath: `` })
@@ -32,7 +32,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     }
   }
 }
-
 
 
 

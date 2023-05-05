@@ -113,30 +113,27 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
   
   - name: "team"
-  editor:
-    preview: false
-  label: "Team Members"
-  label_singular: "Team Member"
-  description: >
-    Add Team Members Here
-  folder: "static/content/team"
-  create: true
-  slug: "{{fields.slug}}"
-  fields:
-    - {label: "Layout", name: "layout", widget: "hidden", default: "team"}
-    - {label: "Team Member Name", name: "name", widget: "string"}
-    - {label: "Job Title", name: "jobTitle", widget: "string"}
-    - {label: "Credentials", name: "credentials", widget: "string"}
-    - {label: "Page Order", name: "order", widget: "number"}
-    - {label: "Team Image", name: "profilePicture", widget: "image", required: false,}
-    - {label: "Body", name: "body", widget: "markdown"}
-    - {
-        label: "Filename",
-        name: "filename",
-        widget: "string",
-        hint: "Enter a unique filename for this team member (without file extension)",
-        default: "{{fields.name | slugify}}"
+    editor:
+      preview: false
+    label: "Team Members"
+    label_singular: "Team Member"
+    description: >
+      Add Team Members Here
+    folder: "static/content/team"
+    create: true
+    slug: "{{fields.slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "team"}
+      - {label: "Team Member Name", name: "name", widget: "string"}
+      - {label: "Job Title", name: "jobTitle", widget: "string"}
+      - {label: "Credentials", name: "credentials", widget: "string"}
+      - {label: "Page Order", name: "order", widget: "number"}
+      - {label: "Team Image", name: "profilePicture", widget: "image", required: false,}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {
+        label: "Slug",
+        name: "slug",
+        widget: "hidden",
+        default: "{{fields.name | slugify}}",
       }
-
-
 
