@@ -5,38 +5,37 @@ import { Link } from "gatsby"
 
 const TeamLanding = props => {
   const data = useStaticQuery(graphql`
-    {
-      allMarkdownRemark(
-        filter: { frontmatter: { layout: { eq: "team" } } }
-        sort: { fields: [frontmatter___order, frontmatter___name], order: ASC }
-      ) {
-        edges {
-          node {
-            id
-            frontmatter {
-              name
-              jobTitle
-              credentials
-              showDetailedPage
-              profilePicture {
-                childImageSharp {
-                  # Specify a fixed image and fragment.
-                  # The default width is 400 pixels
-                  fluid(maxWidth: 400, maxHeight: 300, quality: 100) {
-                    ...GatsbyImageSharpFluid_withWebp
-                  }
+  {
+    allMarkdownRemark(
+      filter: { frontmatter: { layout: { eq: "team" } } }
+      sort: { fields: [frontmatter___order, frontmatter___name], order: ASC }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            name
+            jobTitle
+            credentials
+            showDetailedPage
+            profilePicture {
+              childImageSharp {
+                fluid(maxWidth: 400, maxHeight: 300, quality: 100) {
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
-            html
-            fields {
-              slug
-            }
+            slug
+          }
+          html
+          fields {
+            slug
           }
         }
       }
     }
-  `)
+  }
+`)
 
   const teamMembers = data.allMarkdownRemark.edges
 
