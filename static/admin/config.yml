@@ -185,3 +185,56 @@ collections:
             ],
         }
       - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "jobs"
+    editor:
+      preview: false
+    label: "Jobs"
+    label_singular: "Job"
+    description: >
+      Available Jobs
+    folder: "static/content/careers/jobs"
+    create: true
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "jobs"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Sort Order", name: "sortOrder", widget: "number"}
+      - { label: "Featured Image", name: "featuredImage", widget: "image" }
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - label: "Home Slider"
+    name: "homeslider"
+    files:
+      - file: "static/content/homepage/slider/slider.md"
+        label: "Home Slider"
+        name: "homeslider"
+        fields:
+          - {
+              label: "Layout",
+              name: "layout",
+              widget: "hidden",
+              default: "home-slider",
+            }
+          - {
+              label: "Slider Images",
+              name: "sliderImages",
+              widget: "list",
+              summary: "{{fields.image}} - {{fields.credit}} ",
+              fields:
+                [
+                  { label: "Slider Image", name: "image", widget: "image" },
+                  {
+                    label: "Credit",
+                    name: "credit",
+                    widget: "string",
+                    required: false,
+                    default: "",
+                  },
+                ],
+            }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+
+
+
+      
