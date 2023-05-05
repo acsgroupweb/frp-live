@@ -159,7 +159,7 @@ collections:
       preview: false
     label: "About Page"
     description: >
-      About Section Content
+      About Page Content
     folder: "static/content/about"
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "about"}
