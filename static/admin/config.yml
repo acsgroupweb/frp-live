@@ -122,7 +122,7 @@ collections:
     folder: "static/content/team"
     create: true
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "team"}
+      - {label: "Layout", name: "layout", widget: "hidden", default: "team"}
       - {label: "Team Member Name", name: "name", widget: "string"}
       - {label: "Job Title", name: "jobTitle", widget: "string"}
       - {label: "Credentials", name: "credentials", widget: "string"}
