@@ -32,6 +32,7 @@
     "gatsby-transformer-remark": "^6.8.0",
     "gatsby-transformer-sharp": "^5.8.0",
     "install": "^0.13.0",
+    "lodash": "^4.17.21",
     "netlify-cms-app": "^2.15.72",
     "npm": "^6.14.9",
     "react": "^18.2.0",
@@ -40,7 +41,8 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^4.8.0",
     "react-instantsearch-dom": "^6.10.3",
-    "react-swipeable": "^6.0.1"
+    "react-swipeable": "^6.0.1",
+    "slugify": "^1.6.6"
   },
   "devDependencies": {
     "eslint": "^7.23.0",
