@@ -132,3 +132,34 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Slug", name: "slug", widget: "hidden", value: "{{fields.name | slugify}}"}
 
+  - name: "about"
+    editor:
+      preview: false
+    label: "About Sections"
+    label_singular: "Team Member"
+    description: >
+      About Section Content
+    folder: "static/content/about"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "about"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Sort Order", name: "sortOrder", widget: "number"}
+      - { label: "Featured Image", name: "featuredImage", widget: "image" }
+      - {
+          label: "Slider Images",
+          name: "sliderImages",
+          widget: "list",
+          summary: "{{fields.image}} - {{fields.credit}} ",
+          fields:
+            [
+              { label: "Slider Image", name: "image", widget: "image" },
+              {
+                label: "Credit",
+                name: "credit",
+                widget: "string",
+                required: false,
+                default: "",
+              },
+            ],
+        }
+      - {label: "Body", name: "body", widget: "markdown"}
