@@ -111,3 +111,23 @@ collections:
             ],
         }
       - { label: "Body", name: "body", widget: "markdown" }
+  
+  - name: "team"
+    editor:
+      preview: false
+    label: "Team Members"
+    label_singular: "Team Member"
+    description: >
+      Add Team Members here
+    folder: "static/content/team"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "team"}
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Team Member Name", name: "name", widget: "string"}
+      - {label: "Job Title", name: "jobTitle", widget: "string"}
+      - {label: "Credentials", name: "credentials", widget: "string"}
+      - {label: "Page Order", name: "order", widget: "number"}
+      - {label: "Team Image", name: "profilePicture", widget: "image", required: false,}
+      - {label: "Body", name: "body", widget: "markdown"}
