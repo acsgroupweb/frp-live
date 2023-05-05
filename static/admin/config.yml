@@ -124,7 +124,7 @@ collections:
     # slug: "{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "team"}
-      # - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "hidden", default: "{{fields.name | slugify}}"}
       - {label: "Team Member Name", name: "name", widget: "string"}
       - {label: "Job Title", name: "jobTitle", widget: "string"}
       - {label: "Credentials", name: "credentials", widget: "string"}
