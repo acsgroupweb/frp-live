@@ -121,7 +121,7 @@ collections:
       Add Team Members Here
     folder: "static/content/team"
     create: true
-    slug: "{{fields.slug}}"
+    slug: "{{fields.slug}}.md"
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "team"}
       - {label: "Team Member Name", name: "name", widget: "string"}
