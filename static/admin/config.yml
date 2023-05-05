@@ -124,7 +124,7 @@ collections:
     # slug: "{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "team"}
-      - {label: "Slug", name: "slug", widget: "hidden", default: "{{fields.name | slugify}}", required: false}
+      - {label: "Slug", name: "slug", widget: "string", required: true, pattern: ["^[a-z0-9]+(?:-[a-z0-9]+)*$", "Must be lower case and hyphen separated"], hint: "Enter a unique slug for the team member, e.g. 'jane-doe'"}
       - {label: "Team Member Name", name: "name", widget: "string"}
       - {label: "Job Title", name: "jobTitle", widget: "string"}
       - {label: "Credentials", name: "credentials", widget: "string"}
@@ -133,6 +133,6 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
     prePublish:
     - command: >
-        SLUG=$(echo "{{fields.name}}" | tr '[:upper:]' '[:lower:]' | sed -e 's/[^a-zA-Z0-9]/-/g')
-        yq eval ".slug = \"/team/${SLUG}\"" -i {{fileAbsPath}}
+        SLUG=$(echo "{{fields.slug}}" | tr '[:upper:]' '[:lower:]' | sed -e 's/[^a-zA-Z0-9]/-/g')
+      sed -i "s/slug:.*/slug: \/team\/${SLUG}/" {{fileAbsPath}}
 
