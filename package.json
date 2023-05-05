@@ -15,7 +15,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "algoliasearch": "^3.35.1",
+    "algoliasearch": "^4.17.0",
     "cross-env": "^7.0.3",
     "fontsource-lato": "^3.0.9",
     "fontsource-spartan": "^3.0.3",
