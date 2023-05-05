@@ -119,119 +119,119 @@ collections:
         }
       - { label: "Body", name: "body", widget: "markdown" }
       
-  - name: "projectcategory"
-    editor:
-      preview: false
-    label: "Project Categories"
-    label_singular: "Project Category"
-    description: >
-      Add Project CAtegories Here
-    folder: "static/content/projects-category"
-    create: true
-    fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "projectcategory"}
-      - {label: "Category", name: "category", widget: "string"}
-      - {label: "Sort Order", name: "sortOrder", widget: "number"}
-      - {label: "Body", name: "body", widget: "markdown"}    
+  # - name: "projectcategory"
+  #   editor:
+  #     preview: false
+  #   label: "Project Categories"
+  #   label_singular: "Project Category"
+  #   description: >
+  #     Add Project CAtegories Here
+  #   folder: "static/content/projects-category"
+  #   create: true
+  #   fields:
+  #     - {label: "Layout", name: "layout", widget: "hidden", default: "projectcategory"}
+  #     - {label: "Category", name: "category", widget: "string"}
+  #     - {label: "Sort Order", name: "sortOrder", widget: "number"}
+  #     - {label: "Body", name: "body", widget: "markdown"}    
   
-  - name: "team"
-    editor:
-      preview: false
-    label: "Team Members"
-    label_singular: "Team Member"
-    description: >
-      Add Team Members Here
-    folder: "static/content/team"
-    create: true
-    slug: "{{fields.name | slugify}}"
-    fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "team"}
-      - {label: "Team Member Name", name: "name", widget: "string"}
-      - {label: "Job Title", name: "jobTitle", widget: "string"}
-      - {label: "Credentials", name: "credentials", widget: "string"}
-      - {label: "Page Order", name: "order", widget: "number"}
-      - {label: "Team Image", name: "profilePicture", widget: "image", required: false,}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Slug", name: "slug", widget: "hidden", value: "{{fields.name | slugify}}"}
+  # - name: "team"
+  #   editor:
+  #     preview: false
+  #   label: "Team Members"
+  #   label_singular: "Team Member"
+  #   description: >
+  #     Add Team Members Here
+  #   folder: "static/content/team"
+  #   create: true
+  #   slug: "{{fields.name | slugify}}"
+  #   fields:
+  #     - {label: "Layout", name: "layout", widget: "hidden", default: "team"}
+  #     - {label: "Team Member Name", name: "name", widget: "string"}
+  #     - {label: "Job Title", name: "jobTitle", widget: "string"}
+  #     - {label: "Credentials", name: "credentials", widget: "string"}
+  #     - {label: "Page Order", name: "order", widget: "number"}
+  #     - {label: "Team Image", name: "profilePicture", widget: "image", required: false,}
+  #     - {label: "Body", name: "body", widget: "markdown"}
+  #     - {label: "Slug", name: "slug", widget: "hidden", value: "{{fields.name | slugify}}"}
 
-  - name: "about"
-    editor:
-      preview: false
-    label: "About Page"
-    description: >
-      About Page Content
-    folder: "static/content/about"
-    fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "about"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Sort Order", name: "sortOrder", widget: "number"}
-      - { label: "Featured Image", name: "featuredImage", widget: "image" }
-      - {
-          label: "Slider Images",
-          name: "sliderImages",
-          widget: "list",
-          summary: "{{fields.image}} - {{fields.credit}} ",
-          fields:
-            [
-              { label: "Slider Image", name: "image", widget: "image" },
-              {
-                label: "Credit",
-                name: "credit",
-                widget: "string",
-                required: false,
-                default: "",
-              },
-            ],
-        }
-      - {label: "Body", name: "body", widget: "markdown"}
+  # - name: "about"
+  #   editor:
+  #     preview: false
+  #   label: "About Page"
+  #   description: >
+  #     About Page Content
+  #   folder: "static/content/about"
+  #   fields:
+  #     - {label: "Layout", name: "layout", widget: "hidden", default: "about"}
+  #     - {label: "Title", name: "title", widget: "string"}
+  #     - {label: "Sort Order", name: "sortOrder", widget: "number"}
+  #     - { label: "Featured Image", name: "featuredImage", widget: "image" }
+  #     - {
+  #         label: "Slider Images",
+  #         name: "sliderImages",
+  #         widget: "list",
+  #         summary: "{{fields.image}} - {{fields.credit}} ",
+  #         fields:
+  #           [
+  #             { label: "Slider Image", name: "image", widget: "image" },
+  #             {
+  #               label: "Credit",
+  #               name: "credit",
+  #               widget: "string",
+  #               required: false,
+  #               default: "",
+  #             },
+  #           ],
+  #       }
+  #     - {label: "Body", name: "body", widget: "markdown"}
 
-  - label: "Careers Page"
-    name: "careers"
-    files:
-      - file: "static/content/careers/careers.md"
-        label: "Careers Page"
-        name: "careerspage"
-        fields:
-          - {
-              label: "Layout",
-              name: "layout",
-              widget: "hidden",
-              default: "careers",
-            }
-          - {
-              label: "Slider Images",
-              name: "sliderImages",
-              widget: "list",
-              summary: "{{fields.image}} - {{fields.credit}} ",
-              fields:
-                [
-                  { label: "Slider Image", name: "image", widget: "image" },
-                  {
-                    label: "Credit",
-                    name: "credit",
-                    widget: "string",
-                    required: false,
-                    default: "",
-                  },
-                ],
-            }
-          - { label: "Body", name: "body", widget: "markdown" }
+  # - label: "Careers Page"
+  #   name: "careers"
+  #   files:
+  #     - file: "static/content/careers/careers.md"
+  #       label: "Careers Page"
+  #       name: "careerspage"
+  #       fields:
+  #         - {
+  #             label: "Layout",
+  #             name: "layout",
+  #             widget: "hidden",
+  #             default: "careers",
+  #           }
+  #         - {
+  #             label: "Slider Images",
+  #             name: "sliderImages",
+  #             widget: "list",
+  #             summary: "{{fields.image}} - {{fields.credit}} ",
+  #             fields:
+  #               [
+  #                 { label: "Slider Image", name: "image", widget: "image" },
+  #                 {
+  #                   label: "Credit",
+  #                   name: "credit",
+  #                   widget: "string",
+  #                   required: false,
+  #                   default: "",
+  #                 },
+  #               ],
+  #           }
+  #         - { label: "Body", name: "body", widget: "markdown" }
 
-  - name: "jobs"
-    editor:
-      preview: false
-    label: "Open Positions"
-    label_singular: "Position"
-    description: >
-      Available Jobs
-    folder: "static/content/careers/jobs"
-    create: true
-    fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "jobs"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Sort Order", name: "sortOrder", widget: "number"}
-      - { label: "Featured Image", name: "featuredImage", widget: "image" }
-      - {label: "Body", name: "body", widget: "markdown"}
+  # - name: "jobs"
+  #   editor:
+  #     preview: false
+  #   label: "Open Positions"
+  #   label_singular: "Position"
+  #   description: >
+  #     Available Jobs
+  #   folder: "static/content/careers/jobs"
+  #   create: true
+  #   fields:
+  #     - {label: "Layout", name: "layout", widget: "hidden", default: "jobs"}
+  #     - {label: "Title", name: "title", widget: "string"}
+  #     - {label: "Sort Order", name: "sortOrder", widget: "number"}
+  #     - { label: "Featured Image", name: "featuredImage", widget: "image" }
+  #     - {label: "Body", name: "body", widget: "markdown"}
 
   - label: "Home Slider"
     name: "homeslider"
