@@ -121,7 +121,7 @@ collections:
       Add Team Members Here
     folder: "static/content/team"
     create: true
-    slug: "{{slug}}"
+    # slug: "{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "team"}
       # - {label: "Slug", name: "slug", widget: "string"}
