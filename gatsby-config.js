@@ -80,7 +80,7 @@ module.exports = {
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`,
         enableIdentityWidget: true,
-        publicPath: `cms`,
+        publicPath: `admin`,
         htmlTitle: `FRP CMS`,
         htmlFavicon: `src/images/frpinc-logo-notext.png`,
         includeRobots: false,
