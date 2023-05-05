@@ -2,10 +2,10 @@ const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 const _ = require(`lodash`)
+
+
+
 const slugify = require(`slugify`)
-
-
-
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
