@@ -25,6 +25,13 @@ collections:
           default: "General",
         }
       - { label: "Body", name: "body", widget: "markdown" }
+
+
+
+
+
+
+
   - name: "projects" # Used in routes, e.g., /admin/collections/blog
     label: "Projects" # Used in the UI
     folder: "static/content/projects" # The path to the folder where the documents are stored
@@ -111,6 +118,21 @@ collections:
             ],
         }
       - { label: "Body", name: "body", widget: "markdown" }
+      
+  - name: "projectcategory"
+    editor:
+      preview: false
+    label: "Project Categories"
+    label_singular: "Project Category"
+    description: >
+      Add Project CAtegories Here
+    folder: "static/content/projects-category"
+    create: true
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "projectcategory"}
+      - {label: "Category", name: "category", widget: "string"}
+      - {label: "Sort Order", name: "sortOrder", widget: "number"}
+      - {label: "Body", name: "body", widget: "markdown"}    
   
   - name: "team"
     editor:
