@@ -1,6 +1,7 @@
 [build]
   publish = "public"
   command = "gatsby build"
+  memory = "4096"
 
 [build.environment]
   NODE_VERSION = "18"
