@@ -125,7 +125,7 @@ collections:
     label: "Project Categories"
     label_singular: "Project Category"
     description: >
-      Add Project CAtegories Here
+      Add Project Categories Here
     folder: "static/content/projects-category"
     create: true
     fields:
@@ -154,84 +154,84 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Slug", name: "slug", widget: "hidden", value: "{{fields.name | slugify}}"}
 
-  # - name: "about"
-  #   editor:
-  #     preview: false
-  #   label: "About Page"
-  #   description: >
-  #     About Page Content
-  #   folder: "static/content/about"
-  #   fields:
-  #     - {label: "Layout", name: "layout", widget: "hidden", default: "about"}
-  #     - {label: "Title", name: "title", widget: "string"}
-  #     - {label: "Sort Order", name: "sortOrder", widget: "number"}
-  #     - { label: "Featured Image", name: "featuredImage", widget: "image" }
-  #     - {
-  #         label: "Slider Images",
-  #         name: "sliderImages",
-  #         widget: "list",
-  #         summary: "{{fields.image}} - {{fields.credit}} ",
-  #         fields:
-  #           [
-  #             { label: "Slider Image", name: "image", widget: "image" },
-  #             {
-  #               label: "Credit",
-  #               name: "credit",
-  #               widget: "string",
-  #               required: false,
-  #               default: "",
-  #             },
-  #           ],
-  #       }
-  #     - {label: "Body", name: "body", widget: "markdown"}
+  - name: "about"
+    editor:
+      preview: false
+    label: "About Page"
+    description: >
+      About Page Content
+    folder: "static/content/about"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "about"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Sort Order", name: "sortOrder", widget: "number"}
+      - { label: "Featured Image", name: "featuredImage", widget: "image" }
+      - {
+          label: "Slider Images",
+          name: "sliderImages",
+          widget: "list",
+          summary: "{{fields.image}} - {{fields.credit}} ",
+          fields:
+            [
+              { label: "Slider Image", name: "image", widget: "image" },
+              {
+                label: "Credit",
+                name: "credit",
+                widget: "string",
+                required: false,
+                default: "",
+              },
+            ],
+        }
+      - {label: "Body", name: "body", widget: "markdown"}
 
-  # - label: "Careers Page"
-  #   name: "careers"
-  #   files:
-  #     - file: "static/content/careers/careers.md"
-  #       label: "Careers Page"
-  #       name: "careerspage"
-  #       fields:
-  #         - {
-  #             label: "Layout",
-  #             name: "layout",
-  #             widget: "hidden",
-  #             default: "careers",
-  #           }
-  #         - {
-  #             label: "Slider Images",
-  #             name: "sliderImages",
-  #             widget: "list",
-  #             summary: "{{fields.image}} - {{fields.credit}} ",
-  #             fields:
-  #               [
-  #                 { label: "Slider Image", name: "image", widget: "image" },
-  #                 {
-  #                   label: "Credit",
-  #                   name: "credit",
-  #                   widget: "string",
-  #                   required: false,
-  #                   default: "",
-  #                 },
-  #               ],
-  #           }
-  #         - { label: "Body", name: "body", widget: "markdown" }
+  - label: "Careers Page"
+    name: "careers"
+    files:
+      - file: "static/content/careers/careers.md"
+        label: "Careers Page"
+        name: "careerspage"
+        fields:
+          - {
+              label: "Layout",
+              name: "layout",
+              widget: "hidden",
+              default: "careers",
+            }
+          - {
+              label: "Slider Images",
+              name: "sliderImages",
+              widget: "list",
+              summary: "{{fields.image}} - {{fields.credit}} ",
+              fields:
+                [
+                  { label: "Slider Image", name: "image", widget: "image" },
+                  {
+                    label: "Credit",
+                    name: "credit",
+                    widget: "string",
+                    required: false,
+                    default: "",
+                  },
+                ],
+            }
+          - { label: "Body", name: "body", widget: "markdown" }
 
-  # - name: "jobs"
-  #   editor:
-  #     preview: false
-  #   label: "Open Positions"
-  #   label_singular: "Position"
-  #   description: >
-  #     Available Jobs
-  #   folder: "static/content/careers/jobs"
-  #   create: true
-  #   fields:
-  #     - {label: "Layout", name: "layout", widget: "hidden", default: "jobs"}
-  #     - {label: "Title", name: "title", widget: "string"}
-  #     - {label: "Sort Order", name: "sortOrder", widget: "number"}
-  #     - { label: "Featured Image", name: "featuredImage", widget: "image" }
-  #     - {label: "Body", name: "body", widget: "markdown"}
+  - name: "jobs"
+    editor:
+      preview: false
+    label: "Open Positions"
+    label_singular: "Position"
+    description: >
+      Available Jobs
+    folder: "static/content/careers/jobs"
+    create: true
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "jobs"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Sort Order", name: "sortOrder", widget: "number"}
+      - { label: "Featured Image", name: "featuredImage", widget: "image" }
+      - {label: "Body", name: "body", widget: "markdown"}
 
   - label: "Home Slider"
     name: "homeslider"
@@ -265,7 +265,32 @@ collections:
             }
           - { label: "Body", name: "body", widget: "markdown" }
           
-  
+  - label: Menu Navigation
+    name: menuNavigation
+    editor:
+       preview: false
+    files:
+       - file: "static/content/menu/menu.json"
+         name: "menu"
+         label: "Menu"
+         fields:
+            - label: "Menu Items"
+              name: "TopMenu"
+              widget: "list"
+              collapsed: true
+              hint: "Here you can add menu items. Click on 'Add menu item'."
+              fields:
+                - label: "Menu Title"
+                  name: "name"
+                  widget: "string"
+                  required: true
+                  hint: "The title that appears in the menu."
+                - label: "URL"
+                  name: "link"
+                  widget: "string"
+                  required: true
+                  hint: "Add the URL of the menu item."
+
 
 
 
