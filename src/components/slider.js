@@ -17,20 +17,12 @@ const Slider = ({ children }) => {
               sliderImages {
                 smallImage: image {
                   childImageSharp {
-                    # Specify a fixed image and fragment.
-                    # The default width is 400 pixels
-                    fluid(maxWidth: 500, maxHeight: 240, quality: 50) {
-                      ...GatsbyImageSharpFluid_withWebp
-                    }
+                    gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
                   }
                 }
                 largeImage: image {
                   childImageSharp {
-                    # Specify a fixed image and fragment.
-                    # The default width is 400 pixels
-                    fluid(maxWidth: 2500, maxHeight: 1200, quality: 50) {
-                      ...GatsbyImageSharpFluid_withWebp
-                    }
+                    gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
                   }
                 }
                 credit
