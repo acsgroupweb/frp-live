@@ -66,7 +66,11 @@ export const query = graphql`
         sliderImages {
           image {
             childImageSharp {
-              gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
+              # Specify a fixed image and fragment.
+              # The default width is 400 pixels
+              fluid(maxWidth: 1000, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
             }
           }
           credit

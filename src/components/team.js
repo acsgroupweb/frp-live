@@ -15,12 +15,20 @@ const Team = () => {
             frontmatter {
               smallImage: profilePicture {
                 childImageSharp {
-                  gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
+                  # Specify a fixed image and fragment.
+                  # The default width is 400 pixels
+                  fluid(maxWidth: 500, maxHeight: 270, quality: 50) {
+                    ...GatsbyImageSharpFluid_withWebp
+                  }
                 }
               }
               largeImage: profilePicture {
                 childImageSharp {
-                  gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
+                  # Specify a fixed image and fragment.
+                  # The default width is 400 pixels
+                  fluid(maxWidth: 1300, maxHeight: 600, quality: 50) {
+                    ...GatsbyImageSharpFluid_withWebp
+                  }
                 }
               }
             }
@@ -32,7 +40,9 @@ const Team = () => {
         edges {
           node {
             childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH)
+              fluid(maxWidth: 400, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
+              }
             }
           }
         }

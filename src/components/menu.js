@@ -1,10 +1,10 @@
 import { Link } from "gatsby"
-import React, { useState } from "react"
+import React, { createRef, useState } from "react"
 import MenuData from "../../static/content/menu/menu.json"
-import { FaLinkedin } from "react-icons/fa"
+import { FaLinkedin, FaSearch } from "react-icons/fa"
 import { GoMail, GoLocation } from "react-icons/go"
 // import SearchModal from "../components/search/search-modal"
-// import useClickOutside from "../components/search/use-click-outside"
+import useClickOutside from "../components/search/use-click-outside"
 
 function ToggleButton(props) {
   return (
@@ -37,9 +37,9 @@ function SubMenuButton(props) {
 function Menu(props) {
   const menuItems = MenuData.TopMenu
   const [mMenuExpanded, setmMenuExpanded] = useState(false)
-  // const [showSearch, setShowSearch] = useState(false)
-  // const rootRef = createRef()
-  // // useClickOutside(rootRef, () => setShowSearch(false))
+  const [showSearch, setShowSearch] = useState(false)
+  const rootRef = createRef()
+  useClickOutside(rootRef, () => setShowSearch(false))
   const [subMenuToggleStates, setSubMenuToggleStates] = useState(() => {
     var array1 = []
     for (let index = 0; index < menuItems.length; index++) {

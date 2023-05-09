@@ -13,7 +13,11 @@ const Header = ({ siteTitle }) => {
         edges {
           node {
             childImageSharp {
-              gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
+              # Specify a fixed image and fragment.
+              # The default width is 400 pixels
+              fluid(maxWidth: 400, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
+              }
             }
           }
         }
@@ -24,15 +28,15 @@ const Header = ({ siteTitle }) => {
   //console.log(Queries)
 
   const [toggleStatus, setToggleStatus] = useState(false)
-  // const [searchStatus, setSearchStatus] = useState(false)
+  const [searchStatus, setSearchStatus] = useState(false)
 
   function changeToggleState(newValue) {
     setToggleStatus(newValue)
   }
 
-  // function changeSearchState(newValue) {
-  //   setSearchStatus(newValue)
-  // }
+  function changeSearchState(newValue) {
+    setSearchStatus(newValue)
+  }
 
   return (
     <header
@@ -57,7 +61,7 @@ const Header = ({ siteTitle }) => {
         <div className="menu-area">
           <Menu
             toggleHandler={changeToggleState}
-            // searchHandler={changeSearchState}
+            searchHandler={changeSearchState}
           />
         </div>
       </div>
