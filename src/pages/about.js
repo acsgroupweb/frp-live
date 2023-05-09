@@ -124,8 +124,8 @@ export default AboutPage
 export const query = graphql`
   {
     about: allMarkdownRemark(
-      filter: { frontmatter: { layout: { eq: "about" } } }
-      sort: { fields: frontmatter___sortOrder, order: ASC }
+      filter: {frontmatter: {layout: {eq: "about"}}}
+      sort: {frontmatter: {sortOrder: ASC}}
     ) {
       nodes {
         frontmatter {
@@ -133,8 +133,6 @@ export const query = graphql`
           title
           featuredImage {
             childImageSharp {
-              # Specify a fixed image and fragment.
-              # The default width is 400 pixels
               fluid(maxWidth: 500, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp
               }
@@ -143,8 +141,6 @@ export const query = graphql`
           sliderImages {
             image {
               childImageSharp {
-                # Specify a fixed image and fragment.
-                # The default width is 400 pixels
                 fluid(maxWidth: 800, quality: 60) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
@@ -153,7 +149,6 @@ export const query = graphql`
             credit
           }
         }
-
         htmlAst
       }
     }

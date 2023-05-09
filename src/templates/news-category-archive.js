@@ -343,10 +343,8 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       limit: $limit
       skip: $skip
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: {
-        frontmatter: { category: { in: [$category] }, layout: { eq: "news" } }
-      }
+      sort: {frontmatter: {date: DESC}}
+      filter: {frontmatter: {category: {in: [$category]}, layout: {eq: "news"}}}
     ) {
       totalCount
       edges {
@@ -360,8 +358,6 @@ export const pageQuery = graphql`
             category
             newsItemImage {
               childImageSharp {
-                # Specify a fixed image and fragment.
-                # The default width is 400 pixels
                 fluid(maxWidth: 800, quality: 100) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
@@ -372,10 +368,8 @@ export const pageQuery = graphql`
         }
       }
     }
-    categoryList: allMarkdownRemark(
-      filter: { frontmatter: { layout: { eq: "news" } } }
-    ) {
-      group(field: frontmatter___category) {
+    categoryList: allMarkdownRemark(filter: {frontmatter: {layout: {eq: "news"}}}) {
+      group(field: {frontmatter: {category: SELECT}}) {
         category: fieldValue
         totalCount
       }

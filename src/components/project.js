@@ -22,9 +22,7 @@ function ToggleButton(props) {
 const Project = () => {
   const data = useStaticQuery(graphql`
     {
-      allMarkdownRemark(
-        filter: { frontmatter: { layout: { eq: "project" } } }
-      ) {
+      allMarkdownRemark(filter: {frontmatter: {layout: {eq: "project"}}}) {
         edges {
           node {
             id
@@ -37,8 +35,6 @@ const Project = () => {
               featuredDesktopProject
               smallImage: featuredImage {
                 childImageSharp {
-                  # Specify a fixed image and fragment.
-                  # The default width is 400 pixels
                   fluid(maxWidth: 200, maxHeight: 100, quality: 50) {
                     ...GatsbyImageSharpFluid_withWebp
                   }
@@ -46,8 +42,6 @@ const Project = () => {
               }
               largeImage: featuredImage {
                 childImageSharp {
-                  # Specify a fixed image and fragment.
-                  # The default width is 400 pixels
                   fluid(maxWidth: 400, maxHeight: 200, quality: 50) {
                     ...GatsbyImageSharpFluid_withWebp
                   }
@@ -56,8 +50,6 @@ const Project = () => {
               sliderImages {
                 image {
                   childImageSharp {
-                    # Specify a fixed image and fragment.
-                    # The default width is 400 pixels
                     fluid(maxWidth: 800, quality: 60) {
                       ...GatsbyImageSharpFluid_withWebp
                     }
@@ -71,8 +63,8 @@ const Project = () => {
         }
       }
       categoryNames: allMarkdownRemark(
-        filter: { frontmatter: { layout: { eq: "projectcategory" } } }
-        sort: { fields: frontmatter___sortOrder, order: ASC }
+        filter: {frontmatter: {layout: {eq: "projectcategory"}}}
+        sort: {frontmatter: {sortOrder: ASC}}
         skip: 1
       ) {
         edges {

@@ -40,8 +40,8 @@ export default function Careers({ data }) {
 export const query = graphql`
   {
     careers: allMarkdownRemark(
-      filter: { frontmatter: { layout: { eq: "careers" } } }
-      sort: { fields: [frontmatter___sortOrder], order: ASC }
+      filter: {frontmatter: {layout: {eq: "careers"}}}
+      sort: {frontmatter: {sortOrder: ASC}}
     ) {
       edges {
         node {

@@ -304,44 +304,40 @@ export default class BlogList extends React.Component {
 }
 
 export const blogListQuery = graphql`
-  query blogListQuery($skip: Int!, $limit: Int!) {
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      limit: $limit
-      skip: $skip
-      filter: { frontmatter: { layout: { eq: "news" } } }
-    ) {
-      edges {
-        node {
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            date(formatString: "DD MMMM YYYY")
-            category
-            newsItemImage {
-              childImageSharp {
-                # Specify a fixed image and fragment.
-                # The default width is 400 pixels
-                fluid(maxWidth: 800, quality: 100) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
+query blogListQuery($skip: Int!, $limit: Int!) {
+  allMarkdownRemark(
+    sort: {frontmatter: {date: DESC}}
+    limit: $limit
+    skip: $skip
+    filter: {frontmatter: {layout: {eq: "news"}}}
+  ) {
+    edges {
+      node {
+        fields {
+          slug
+        }
+        frontmatter {
+          title
+          date(formatString: "DD MMMM YYYY")
+          category
+          newsItemImage {
+            childImageSharp {
+              fluid(maxWidth: 800, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp
               }
             }
           }
-          html
         }
+        html
       }
-    }
-    categoryList: allMarkdownRemark(
-      filter: { frontmatter: { layout: { eq: "news" } } }
-    ) {
-      group(field: frontmatter___category) {
-        category: fieldValue
-        totalCount
-      }
-      totalCount
     }
   }
+  categoryList: allMarkdownRemark(filter: {frontmatter: {layout: {eq: "news"}}}) {
+    group(field: {frontmatter: {category: SELECT}}) {
+      category: fieldValue
+      totalCount
+    }
+    totalCount
+  }
+}
 `

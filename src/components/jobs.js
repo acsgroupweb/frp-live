@@ -6,8 +6,8 @@ export default function Jobs() {
   const data = useStaticQuery(graphql`
     {
       jobs: allMarkdownRemark(
-        filter: { frontmatter: { layout: { eq: "jobs" } } }
-        sort: { fields: [frontmatter___sortOrder], order: ASC }
+        filter: {frontmatter: {layout: {eq: "jobs"}}}
+        sort: {frontmatter: {sortOrder: ASC}}
       ) {
         edges {
           node {

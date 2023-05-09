@@ -21,9 +21,7 @@ function ToggleButton(props) {
 const ProjectLanding = props => {
   const data = useStaticQuery(graphql`
     {
-      allMarkdownRemark(
-        filter: { frontmatter: { layout: { eq: "project" } } }
-      ) {
+      allMarkdownRemark(filter: {frontmatter: {layout: {eq: "project"}}}) {
         edges {
           node {
             id
@@ -35,8 +33,6 @@ const ProjectLanding = props => {
               categorySortNumber
               featuredImage {
                 childImageSharp {
-                  # Specify a fixed image and fragment.
-                  # The default width is 400 pixels
                   fluid(maxWidth: 500, maxHeight: 250, quality: 60) {
                     ...GatsbyImageSharpFluid_withWebp
                   }
@@ -51,8 +47,8 @@ const ProjectLanding = props => {
         }
       }
       categoryNames: allMarkdownRemark(
-        filter: { frontmatter: { layout: { eq: "projectcategory" } } }
-        sort: { fields: frontmatter___sortOrder, order: ASC }
+        filter: {frontmatter: {layout: {eq: "projectcategory"}}}
+        sort: {frontmatter: {sortOrder: ASC}}
       ) {
         edges {
           node {

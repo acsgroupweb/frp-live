@@ -40,7 +40,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const result = await graphql(`
     query {
       allOtherItems: allMarkdownRemark(
-        filter: { frontmatter: { layout: { in: ["project", "team"] } } }
+        filter: {frontmatter: {layout: {in: ["project", "team"]}}}
       ) {
         edges {
           node {
@@ -53,10 +53,7 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-
-      jobItems: allMarkdownRemark(
-        filter: { frontmatter: { layout: { eq: "jobs" } } }
-      ) {
+      jobItems: allMarkdownRemark(filter: {frontmatter: {layout: {eq: "jobs"}}}) {
         edges {
           node {
             frontmatter {
@@ -68,10 +65,7 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-
-      newsItems: allMarkdownRemark(
-        filter: { frontmatter: { layout: { eq: "news" } } }
-      ) {
+      newsItems: allMarkdownRemark(filter: {frontmatter: {layout: {eq: "news"}}}) {
         edges {
           node {
             frontmatter {
@@ -83,12 +77,11 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-
       newsCategories: allMarkdownRemark(
         limit: 2000
-        filter: { frontmatter: { layout: { eq: "news" } } }
+        filter: {frontmatter: {layout: {eq: "news"}}}
       ) {
-        group(field: frontmatter___category) {
+        group(field: {frontmatter: {category: SELECT}}) {
           fieldValue
           totalCount
           nodes {

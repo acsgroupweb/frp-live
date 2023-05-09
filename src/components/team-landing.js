@@ -7,8 +7,8 @@ const TeamLanding = props => {
   const data = useStaticQuery(graphql`
     {
       allMarkdownRemark(
-        filter: { frontmatter: { layout: { eq: "team" } } }
-        sort: { fields: [frontmatter___order, frontmatter___name], order: ASC }
+        filter: {frontmatter: {layout: {eq: "team"}}}
+        sort: [{frontmatter: {order: ASC}}, {frontmatter: {name: ASC}}]
       ) {
         edges {
           node {
@@ -20,8 +20,6 @@ const TeamLanding = props => {
               showDetailedPage
               profilePicture {
                 childImageSharp {
-                  # Specify a fixed image and fragment.
-                  # The default width is 400 pixels
                   fluid(maxWidth: 400, maxHeight: 300, quality: 100) {
                     ...GatsbyImageSharpFluid_withWebp
                   }
