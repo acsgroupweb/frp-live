@@ -148,7 +148,7 @@ collections:
       - {label: "Layout", name: "layout", widget: "hidden", default: "team"}
       - {label: "Team Member Name", name: "name", widget: "string"}
       - {label: "Job Title", name: "jobTitle", widget: "string"}
-      - {label: "Credentials", name: "credentials", widget: "string"}
+      - {label: "Credentials", name: "credentials", widget: "string", required: false,}
       - {label: "Page Order", name: "order", widget: "number"}
       - {label: "Team Image", name: "profilePicture", widget: "image", required: false,}
       - {label: "Body", name: "body", widget: "markdown"}
