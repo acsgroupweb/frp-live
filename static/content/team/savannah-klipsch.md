@@ -2,7 +2,7 @@
 layout: team
 name: Savannah Klipsch
 jobTitle: BIM Designer
-credentials: " "
+credentials: ""
 order: 14
 profilePicture: /static/images/team_savannah_klipsch.jpg
 ---
