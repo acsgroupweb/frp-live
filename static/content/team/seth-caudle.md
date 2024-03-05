@@ -1,10 +1,10 @@
 ---
 layout: team
 name: Seth Caudle
-credentials: 
-jobTitle: Staff Engineer
+jobTitle: Project Engineer
+credentials: null
+order: 10
 profilePicture: /static/images/team_seth_caudle.jpg
-order: 11
-showDetailedPage: TRUE
+showDetailedPage: true
 ---
-Seth serves as a Staff Engineer at FRP, and has 2 years of experience.  He completed his Master's Degree at Virginia Tech.  Seth has experience with design of structural steel and reinforced concrete.
+Seth serves as a Project Engineer at FRP, and has 3 years of experience.  He completed his Master's Degree at Virginia Tech.  Seth has experience with design of structural steel, conventionally reinforced concrete, and post-tensioned concrete on various project types including sports arenas, hotels, and institutional buildings.
