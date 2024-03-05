@@ -2,7 +2,7 @@
 layout: team
 name: Seth Caudle
 jobTitle: Project Engineer
-credentials: P.E.
+credentials: PE
 order: 10
 profilePicture: /static/images/team_seth_caudle.jpg
 showDetailedPage: true
