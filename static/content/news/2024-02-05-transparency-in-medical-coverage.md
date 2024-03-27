@@ -1,7 +1,7 @@
 ---
 layout: news
 title: TRANSPARENCY IN MEDICAL COVERAGE
-date: 2024-02-05T17:20:28.665Z
+date: 2024-01-01T17:20:00.000Z
 newsItemImage: /static/images/policies_and_procedures.jpg
 category: Policies
 ---
