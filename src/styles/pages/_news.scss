@@ -7,7 +7,7 @@
 .news-single-container {
   width: 95%;
   margin: 20px auto;
-
+padding-bottom: 10vh;
   .section-title .half-color::after {
     @include m.HalfColor("w", c.$color__frp_black);
   }
