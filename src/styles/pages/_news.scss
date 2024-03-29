@@ -3,11 +3,14 @@
 @use 'utils/colors' as c;
 @use 'utils/screens' as s;
 
+.news-single-container {
+  padding-bottom: 10vh;
+}
+  
 .news-list-container,
 .news-single-container {
   width: 95%;
   margin: 20px auto;
-padding-bottom: 10vh;
   .section-title .half-color::after {
     @include m.HalfColor("w", c.$color__frp_black);
   }
@@ -143,7 +146,6 @@ padding-bottom: 10vh;
 }
 
 .news-single-container {
-  padding-bottom: 10vh;
   .navigation {
     display: flex;
     justify-content: flex-end;
@@ -219,6 +221,5 @@ padding-bottom: 10vh;
   .news-single-container {
     max-width: 800px;
     margin: 20px auto;
-    padding-bottom: 10vh;
   }
 }
