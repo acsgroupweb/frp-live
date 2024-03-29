@@ -20,7 +20,7 @@ export default function BlogPost({ location, data }) {
   const post = data.markdownRemark
   return (
     <Layout>
-      <div className="news-single-container">
+      <div className="news-single-container" style={{paddingBottom:'20vh'}}>
         <div className="news-single-image">
           <Img
             fluid={post.frontmatter.newsItemImage.childImageSharp.fluid}
