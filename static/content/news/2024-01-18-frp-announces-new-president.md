@@ -3,7 +3,7 @@ layout: news
 title: FRP ANNOUNCES NEW PRESIDENT
 date: 2024-01-18T17:58:40.937Z
 newsItemImage: /static/images/team_melissa_stump.jpg
-category: General
+category: Company
 ---
 We are pleased to announce that Melissa Stump, PE has been promoted to President of FRP.
 
