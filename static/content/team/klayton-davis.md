@@ -2,6 +2,7 @@
 layout: team
 name: Klayton Davis
 jobTitle: Staff Engineer
+credentials: EIT
 order: 12
 profilePicture: /static/images/team_klayton_davis.jpg
 ---
