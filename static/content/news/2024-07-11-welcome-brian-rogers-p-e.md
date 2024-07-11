@@ -1,7 +1,7 @@
 ---
 layout: news
 title: Welcome Brian Rogers, P.E.
-date: 2024-07-11T13:19:00.000Z
+date: 2024-07-11T13:32:00.000Z
 newsItemImage: /static/images/brian-rogers.jpg
 category: Company
 ---
