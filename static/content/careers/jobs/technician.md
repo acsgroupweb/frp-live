@@ -1,6 +1,6 @@
 ---
 layout: jobs
-title: Technician/Revit Model Manager
+title: BIM Designer / BIM Manager
 sortOrder: 3
 featuredImage: /static/images/tech_model_mgr_icon.jpg
 ---
