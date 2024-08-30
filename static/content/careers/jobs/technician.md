@@ -1,12 +1,12 @@
 ---
 layout: jobs
-title: BIM Designer / BIM Manager
+title: BIM Manager
 sortOrder: 3
 featuredImage: /static/images/tech_model_mgr_icon.jpg
 ---
 # Excerpt
 
-The BIM Designer / Manager  position requires a firm understanding of building construction, and proficiency in three-dimensional modeling with Autodesk Revit software as well as skills required to develop and maintain Revit standards and training.
+The BIM Manager  position requires a firm understanding of building construction, and proficiency in three-dimensional modeling with Autodesk Revit software as well as skills required to develop and maintain Revit standards and training.
 
 # Main Text
 
