@@ -1,7 +1,7 @@
 ---
 layout: team
 name: Benjamin Lengerich
-jobTitle: Project Engineer
+jobTitle: Project Manager
 credentials: PE
 order: 10
 profilePicture: /static/images/team_benjamin_lengerich.jpg
