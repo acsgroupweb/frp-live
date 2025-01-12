@@ -3,7 +3,7 @@ layout: team
 name: Bill Horton
 jobTitle: Principal (Past President)
 credentials: SE
-order: 3
+order: 4
 profilePicture: /static/images/team_bill_horton.jpg
 showDetailedPage: true
 ---
