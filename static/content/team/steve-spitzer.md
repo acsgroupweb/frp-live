@@ -3,7 +3,7 @@ layout: team
 name: Steve Spitzer
 jobTitle: Vice President, Chief S.E.
 credentials: PE, SE
-order: 4
+order: 3
 profilePicture: /static/images/team_steve_spitzer.jpg
 showDetailedPage: true
 ---
