@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import React, { useState } from "react"
 import Img from "gatsby-image"
 import Menu from "./menu"
-import Queries from "../utils/algolia-queries"
+//import Queries from "../utils/algolia-queries"
 
 const Header = ({ siteTitle }) => {
   const data = useStaticQuery(graphql`
@@ -43,12 +43,12 @@ const Header = ({ siteTitle }) => {
       className={toggleStatus ? "header-wrapper toggle" : "header-wrapper"}
     >
       <div
-        className={
-          searchStatus
-            ? "header-content-wrapper toggle-search"
-            : "header-content-wrapper"
-        }
-        // className="header-content-wrapper"
+        // className={
+        //   searchStatus
+        //     ? "header-content-wrapper toggle-search"
+        //     : "header-content-wrapper"
+        // }
+        className="header-content-wrapper"
       >
         <div className="logo-area">
           <Link to="/">

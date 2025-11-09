@@ -3,7 +3,7 @@ import React, { createRef, useState } from "react"
 import MenuData from "../../static/content/menu/menu.json"
 import { FaLinkedin, FaSearch } from "react-icons/fa"
 import { GoMail, GoLocation } from "react-icons/go"
-import SearchModal from "../components/search/search-modal"
+// import SearchModal from "../components/search/search-modal"
 import useClickOutside from "../components/search/use-click-outside"
 
 function ToggleButton(props) {
@@ -151,7 +151,7 @@ function Menu(props) {
             <FaLinkedin />
           </a>
         </li>
-        <li className="search-icon">
+        {/* <li className="search-icon">
           <span
             onClick={() => {
               setShowSearch(true)
@@ -159,9 +159,9 @@ function Menu(props) {
           >
             <FaSearch />
           </span>
-        </li>
+        </li> */}
       </ul>
-      <div ref={rootRef} className={showSearch ? "modal show" : "modal"}>
+      {/* <div ref={rootRef} className={showSearch ? "modal show" : "modal"}>
         <SearchModal
           onSearchClick={() => {
             setShowSearch(false)
@@ -173,7 +173,7 @@ function Menu(props) {
           }}
           active={showSearch}
         />
-      </div>
+      </div> */}
     </nav>
   )
 }
