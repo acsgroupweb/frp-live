@@ -10,6 +10,7 @@ import Services from "../components/services"
 
 const IndexPage = () => (
   <Layout>
+    <meta name="algolia-site-verification"  content="8E35826A01699C73" />
     <SEO title="Home" />
     <Slider />
     <Intro />
