@@ -1,7 +1,7 @@
 const escapeStringRegexp = require("escape-string-regexp")
 
-//const pagePath = `static/content/about`
-//const indexName = `About`
+const pagePath = `static/content/about`
+const indexName = `About`
 
 const teamQuery = `{
   team: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/static/content/team/"}}) {
